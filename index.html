@@ -20,6 +20,20 @@
                     <span class="coin-icon">🪙</span>
                     <span id="coins">0</span>
                 </div>
+                <div id="powerup-status" class="powerup-status hidden">
+                    <div class="powerup-item" id="powerup-speed">
+                        <span class="powerup-icon">⚡</span>
+                        <div class="powerup-bar"><div class="powerup-fill" id="speed-fill"></div></div>
+                    </div>
+                    <div class="powerup-item" id="powerup-magnet">
+                        <span class="powerup-icon">🧲</span>
+                        <div class="powerup-bar"><div class="powerup-fill" id="magnet-fill"></div></div>
+                    </div>
+                    <div class="powerup-item" id="powerup-shield">
+                        <span class="powerup-icon">🛡️</span>
+                        <div class="powerup-bar"><div class="powerup-fill" id="shield-fill"></div></div>
+                    </div>
+                </div>
             </div>
             <div class="hud-right">
                 <div class="highscore-display">
@@ -31,10 +45,51 @@
         </div>
 
         <div id="start-screen" class="overlay">
-            <div class="overlay-content">
+            <div class="overlay-content wide">
                 <h1 class="game-title">🏃 3D 跑酷游戏</h1>
                 <p class="subtitle">无尽奔跑，挑战极限！</p>
-                <div class="instructions">
+
+                <div class="character-select-section">
+                    <p class="section-label">选择角色</p>
+                    <div class="character-grid">
+                        <div class="character-card selected" data-char="0">
+                            <div class="character-preview char-0"></div>
+                            <span class="character-name">探险家</span>
+                        </div>
+                        <div class="character-card" data-char="1">
+                            <div class="character-preview char-1"></div>
+                            <span class="character-name">忍者</span>
+                        </div>
+                        <div class="character-card" data-char="2">
+                            <div class="character-preview char-2"></div>
+                            <span class="character-name">机器人</span>
+                        </div>
+                        <div class="character-card" data-char="3">
+                            <div class="character-preview char-3"></div>
+                            <span class="character-name">冒险家</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="powerup-legend">
+                    <p class="section-label">道具说明</p>
+                    <div class="powerup-icons">
+                        <div class="powerup-legend-item">
+                            <span class="powerup-legend-icon">⚡</span>
+                            <span>加速冲刺</span>
+                        </div>
+                        <div class="powerup-legend-item">
+                            <span class="powerup-legend-icon">🧲</span>
+                            <span>金币磁铁</span>
+                        </div>
+                        <div class="powerup-legend-item">
+                            <span class="powerup-legend-icon">🛡️</span>
+                            <span>无敌护盾</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructions compact">
                     <div class="instruction-item">
                         <span class="key">← →</span>
                         <span>左右移动</span>
@@ -45,9 +100,10 @@
                     </div>
                     <div class="instruction-item">
                         <span class="key">P</span>
-                        <span>暂停游戏</span>
+                        <span>暂停</span>
                     </div>
                 </div>
+
                 <div class="highscore-preview">
                     <span>历史最高分：</span>
                     <span id="start-highscore">0</span>
