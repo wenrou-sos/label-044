@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 跑酷游戏 - Endless Runner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+
+        <div id="hud">
+            <div class="hud-left">
+                <div class="score-display">
+                    <span class="label">分数</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="coin-display">
+                    <span class="coin-icon">🪙</span>
+                    <span id="coins">0</span>
+                </div>
+            </div>
+            <div class="hud-right">
+                <div class="highscore-display">
+                    <span class="label">最高分</span>
+                    <span id="highscore">0</span>
+                </div>
+                <button id="pause-btn" class="icon-btn">⏸️</button>
+            </div>
+        </div>
+
+        <div id="start-screen" class="overlay">
+            <div class="overlay-content">
+                <h1 class="game-title">🏃 3D 跑酷游戏</h1>
+                <p class="subtitle">无尽奔跑，挑战极限！</p>
+                <div class="instructions">
+                    <div class="instruction-item">
+                        <span class="key">← →</span>
+                        <span>左右移动</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="key">↑ / 空格</span>
+                        <span>跳跃</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="key">P</span>
+                        <span>暂停游戏</span>
+                    </div>
+                </div>
+                <div class="highscore-preview">
+                    <span>历史最高分：</span>
+                    <span id="start-highscore">0</span>
+                </div>
+                <button id="start-btn" class="primary-btn">开始游戏</button>
+            </div>
+        </div>
+
+        <div id="pause-screen" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>游戏暂停</h2>
+                <div class="pause-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">当前分数</span>
+                        <span id="pause-score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">收集金币</span>
+                        <span id="pause-coins">0</span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button id="resume-btn" class="primary-btn">继续游戏</button>
+                    <button id="pause-restart-btn" class="secondary-btn">重新开始</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameover-screen" class="overlay hidden">
+            <div class="overlay-content">
+                <h2 class="gameover-title">💥 游戏结束</h2>
+                <div class="final-stats">
+                    <div class="stat-item large">
+                        <span class="stat-label">最终分数</span>
+                        <span id="final-score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">收集金币</span>
+                        <span id="final-coins">0</span>
+                    </div>
+                    <div class="stat-item highlight" id="newhighscore-container" style="display:none;">
+                        <span class="stat-label">🎉 新纪录！</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">历史最高</span>
+                        <span id="final-highscore">0</span>
+                    </div>
+                </div>
+                <button id="restart-btn" class="primary-btn">再来一局</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./lib/three.module.js"
+        }
+    }
+    </script>
+    <script type="module" src="js/game.js"></script>
+</body>
+</html>
